@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package practica7;
 
 /**
  *
- * @author Fabian Camp Mussa A01378565
+ * @authors Fabian Camp Mussa A01378565
+ *          Jose Javier Rodriguez Mota A01372812
+ *          Lenin Silva Gutierrez A01373214
  */
 public abstract class Animal {
     
