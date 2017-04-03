@@ -41,7 +41,7 @@ public class PruebaAnimal {
                 System.out.println(PruebaAnimal.anuncia(miRana));
                 System.out.println(PruebaAnimal.anuncia(miRana2));
                 System.out.println(PruebaAnimal.anuncia(miOso));
-                System.out.println(PruebaAnimal.anuncia(miOso));
+                System.out.println(PruebaAnimal.anuncia(miOso2));
                 
                 System.out.println("El veneno de la rana " + miRana.getNombre() + " es:");
                 System.out.println(miRana.getVeneno_mata());
