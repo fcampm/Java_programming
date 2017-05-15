@@ -58,6 +58,7 @@ package ejercicios_practicaprc6;
             return this.nombre;
  	}
 
+         @Override
 	public String toString(){
 
             return "*** " + this.nombre + " ***\n" +
