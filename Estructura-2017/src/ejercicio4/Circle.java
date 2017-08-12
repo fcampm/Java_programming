@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercicio1;
+package ejercicio4;
 
 /**
  *
@@ -12,8 +12,8 @@ package Ejercicio1;
  */
 public class Circle {
     
-    private double radius = 1.0;
-    private String color = "red";
+    protected double radius = 1.0;
+    protected String color = "red";
     
     public Circle(){
         
