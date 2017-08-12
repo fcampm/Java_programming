@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ejercicio4;
 
 /**
@@ -12,8 +8,11 @@ package ejercicio4;
  */
 public class TestCylinder {
    
+    // Main method.
     public static void main(String[] args) {
         
+        /* Creation of object Cylinder c1 using the default constructor 
+           that prints radius, height, base area, volume and color.*/
         Cylinder c1 = new Cylinder();
         System.out.println("Cylinder:" 
         + " radius=" + c1.getRadius()
@@ -22,6 +21,8 @@ public class TestCylinder {
         + " volume=" + c1.getVolume()
         + " color=" + c1.getColor());
         
+        /* Creation of object Cylinder c2 using the constructor that receives a radius value
+           that prints radius, height, base area, volume and color.*/
         Cylinder c2 = new Cylinder(10.0);
         System.out.println("Cylinder:"
         + " radius=" + c2.getRadius()
@@ -30,6 +31,8 @@ public class TestCylinder {
         + " volume=" + c2.getVolume()
         + " color=" + c2.getColor());
         
+        /* Creation of object Cylinder c3 using the constructor that receives a radius value
+           and a height value that prints radius, height, base area, volume and color.*/
         Cylinder c3 = new Cylinder(2.0, 10.0);
         System.out.println("Cylinder:"
         + " radius=" + c3.getRadius()
@@ -38,6 +41,8 @@ public class TestCylinder {
         + " volume=" + c3.getVolume()
         + " color=" + c3.getColor());
         
+        /* Creation of object Cylinder c2 using the constructor that receives a radius value,
+           a height value and a color value that prints radius, height, base area, volume and color.*/
         Cylinder c4 = new Cylinder(4.0, 12.0, "purple");
         System.out.println("Cylinder:"
         + " radius=" + c4.getRadius()
