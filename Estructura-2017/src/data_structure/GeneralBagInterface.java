@@ -30,10 +30,10 @@ public interface GeneralBagInterface {
     
     /** Adds a new entry.
      * 
-     * @param newEnry the object to be added.
+     * @param newEntry the object to be added.
      * @return true if the addition is successful, or false if not.
      */
-    public boolean add(Object newEnry);
+    public boolean add(Object newEntry);
     
     /** Removes one unespecified entry from the bag, if possible.
      * 
