@@ -104,10 +104,23 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
     public boolean contains(T anEntry) {
         return this.indexOf(anEntry) >= 0;
     }
+    
+    public T replace(T anEntry){
+        
+        T temp = bag[numberOfEntries-1];
+        bag[numberOfEntries-1] = anEntry;        
+        return temp;      
+    }
  
     @Override
     public T[] toArray() {
         return Arrays.copyOf(bag, numberOfEntries);
     }
+
+    @Override
+    public String toString() {
+        return "ResizableArrayBag{" + "bag=" + bag + '}';
+    }
  
+    
 }
