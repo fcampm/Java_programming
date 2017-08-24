@@ -119,7 +119,12 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
 
     @Override
     public String toString() {
-        return "ResizableArrayBag{" + "bag=" + bag + '}';
+        String elements="";
+        for (int i=0; i < numberOfEntries; i++){
+            
+            elements += bag[i].toString() + ", ";
+        }                
+        return elements;
     }
  
     

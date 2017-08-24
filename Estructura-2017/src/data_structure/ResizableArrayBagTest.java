@@ -43,6 +43,7 @@ public class ResizableArrayBagTest {
         bag.add(1230);
         
         System.out.println(bag.replace(1640));
+        System.out.println(bag.toString());
         bag.clear();
      
         System.out.println(bag.isEmpty()); // true
