@@ -21,7 +21,7 @@ public class ArrayBagTest {
         System.out.println(bag.isFull()); //false.
         System.out.println(bag.getCurrentSize()); //3
         bag.add(16);
-        bag.add(93);
+        bag.add(93);        
         System.out.println(bag.isFull()); //true.
         System.out.println(bag.add(88)); // false.
         
