@@ -105,6 +105,17 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
         return this.indexOf(anEntry) >= 0;
     }
     
+    public void removeAll(T anEntry){
+        for (int i = 0; i < numberOfEntries; i++){
+            int index = this.indexOf(anEntry);        
+            if(index >= 0){            
+                bag[index] = bag[numberOfEntries-1];
+                bag[numberOfEntries-1] = null;
+                numberOfEntries--;
+            }
+        }
+    }
+    
     public T replace(T anEntry){
         
         T temp = bag[numberOfEntries-1];

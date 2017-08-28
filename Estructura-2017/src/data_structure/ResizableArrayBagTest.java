@@ -47,9 +47,19 @@ public class ResizableArrayBagTest {
         bag.clear();
      
         System.out.println(bag.isEmpty()); // true
-    
         
+        bag.add(3);
+        bag.add(2);
+        bag.add(4);
+        bag.add(6);
+        bag.add(3);
+        bag.add(3);
+        bag.add(6);
         
+        System.out.println(bag.toString());
+        
+        bag.removeAll(3);
+        System.out.println(bag.toString());
     }
 }
 
