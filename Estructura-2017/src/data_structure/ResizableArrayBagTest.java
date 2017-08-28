@@ -58,8 +58,26 @@ public class ResizableArrayBagTest {
         
         System.out.println(bag.toString());
         
-        bag.removeAll(3);
+        bag.removeEvery(3);
         System.out.println(bag.toString());
+        bag.clear();
+        
+        bag.add(3);
+        bag.add(2);
+        bag.add(4);
+        bag.add(6);
+        bag.add(3);
+        bag.add(3);
+        bag.add(6);
+        ResizableArrayBag<Integer> bag2 = new ResizableArrayBag<Integer>(7);
+        bag2.add(6);
+        bag2.add(3);
+        bag2.add(3);
+        bag2.add(6);       
+        bag2.add(3);
+        bag2.add(2);
+        bag2.add(4);
+        System.out.println(bag.equals(bag2));
     }
 }
 

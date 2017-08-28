@@ -1,28 +1,31 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package data_structure;
+
+import java.util.Arrays;
+
 /**
  *
- * @author Fabian Camp Mussa.
- * Topic: Data Structure.
- * Date: August 21, 2017. 
+ * @author root
  */
-import java.util.Arrays;
- 
-public class ResizableArrayBag<T> implements GenericBagInterface<T> {
- 
-    private T[] bag;
+public class ArraySet<T> implements GenericSetInterface<T>{
+    
+    private T[] sets;
     private int numberOfEntries;
     private int capacity;
     private static final int DEFAULT_CAPACITY = 25;
      
     @SuppressWarnings("unchecked")
-    public ResizableArrayBag(int capacity){
+    public ArraySet(int capacity){
         this.capacity = capacity;
         numberOfEntries = 0;
-        bag = (T[])new Object[capacity];
+        sets = (T[])new Object[capacity];
     }
      
-    public ResizableArrayBag(){
+    public ArraySet(){
         this(DEFAULT_CAPACITY);
     }
      
@@ -43,19 +46,22 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
  
     @Override
     public boolean add(T newEntry) {
-        if(numberOfEntries == bag.length){
-            bag = Arrays.copyOf(bag, bag.length*2);
-            this.capacity = bag.length;
+        if(numberOfEntries == sets.length){
+            sets = Arrays.copyOf(sets, sets.length*2);
+            this.capacity = sets.length;
         }
-        bag[numberOfEntries] = newEntry;
+        if(this.contains(newEntry) == false){
+        sets[numberOfEntries] = newEntry;
         numberOfEntries++;
-        return true;
+        return true;       
+        }
+        return false;
     }
  
     @Override
     public T remove() {
-        T temp = bag[numberOfEntries-1];
-        bag[numberOfEntries-1] = null;
+        T temp = sets[numberOfEntries-1];
+        sets[numberOfEntries-1] = null;
         numberOfEntries--;
         return temp;
     }
@@ -64,8 +70,8 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
     public boolean remove(T anEntry) {
         int index = this.indexOf(anEntry);
         if(index >= 0){
-            bag[index] = bag[numberOfEntries-1];
-            bag[numberOfEntries-1] = null;
+            sets[index] = sets[numberOfEntries-1];
+            sets[numberOfEntries-1] = null;
             numberOfEntries--;
             return true;
         }else{
@@ -76,7 +82,7 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
     @SuppressWarnings("unchecked")
     @Override
     public void clear() {
-        bag = (T[])new Object[capacity];
+        sets = (T[])new Object[capacity];
         numberOfEntries = 0;
     }
  
@@ -84,7 +90,7 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
     public int getFrequencyOf(T anEntry) {
         int count = 0;
         for(int i = 0; i < numberOfEntries; i++){
-            if(anEntry.equals(bag[i])){
+            if(anEntry.equals(sets[i])){
                 count++;
             }
         }
@@ -93,7 +99,7 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
      
     private int indexOf(T anEntry){
         for(int i=0; i < numberOfEntries; i++){
-            if(anEntry.equals(bag[i])){
+            if(anEntry.equals(sets[i])){
                 return i;
             }
         }
@@ -109,8 +115,8 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
         for (int i = 0; i < numberOfEntries; i++){
             int index = this.indexOf(anEntry);        
             if(index >= 0){            
-                bag[index] = bag[numberOfEntries-1];
-                bag[numberOfEntries-1] = null;
+                sets[index] = sets[numberOfEntries-1];
+                sets[numberOfEntries-1] = null; 
                 numberOfEntries--;
             }
         }
@@ -118,39 +124,44 @@ public class ResizableArrayBag<T> implements GenericBagInterface<T> {
     
     public T replace(T anEntry){
         
-        T temp = bag[numberOfEntries-1];
-        bag[numberOfEntries-1] = anEntry;        
+        T temp = sets[numberOfEntries-1];
+        sets[numberOfEntries-1] = anEntry;        
         return temp;      
     }
  
     @Override
     public T[] toArray() {
-        return Arrays.copyOf(bag, numberOfEntries);
+        return Arrays.copyOf(sets, numberOfEntries);
     }
 
     @Override
     public String toString() {
-        String elements="The content of the bag is:\n";
+        String elements="The content of the set is:\n";
         for (int i=0; i < numberOfEntries; i++){
             
-            elements += bag[i].toString() + "\n";
+            elements += sets[i].toString() + "\n";
         }                
         return elements;
     }
     
-
-    
-    public boolean equals(ResizableArrayBag <T> otherBag) {
-        if (otherBag.numberOfEntries != this.numberOfEntries){
+    public boolean equals(ArraySet <T> otherSets) {
+        if (otherSets.numberOfEntries != this.numberOfEntries){
             return false;
         }
         for (int i = 0; i < this.numberOfEntries; i++){
-            if(otherBag.getFrequencyOf(bag[i]) != this.getFrequencyOf(bag[i])){
+            if(otherSets.getFrequencyOf(sets[i]) != this.getFrequencyOf(sets[i])){
                 return false;
             }                       
         } 
         return true;
     }
- 
     
+    public ArraySet<T> union(ArraySet<T> otherSet){
+        
+        ArraySet unionSet = new ArraySet();
+        
+        for (int i = 0; i < unionSet.numberOfEntries; i++){
+            
+        }
+    }
 }
