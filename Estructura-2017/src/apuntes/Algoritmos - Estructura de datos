@@ -1,0 +1,62 @@
+Clase del lunes 14 de agosto
+Anexo: Programa en Java ubicado en la carpeta "apuntes" llamado AlgoritmosPrueba1.java
+
+Elementos a considerar en un algoritmo:
+* Comportamiento.
+* Velocidad.
+* Requisitos de memoria.
+* Técnicas empleadas.
+
+Características que hacen un buen algoritmo:
+a) El algoritmo es correcto: produce respuestas que resuelven el problema.
+b) El algoritmo es fácil de manterner: El código es simple, intuitivo y elegante.
+c) El algoritmo eficinete: que entregue las respuestas en un tiempo razonable y haga un uso sensato de los recursos disponibles.
+
+Para cualquier problema no existe solamente una forma de resolverlo.
+
+Métodos para ver que algoritmo funciona mejor que otros:
+
+METODO 1:
+1) Implementar todos los algoritmos.
+2) Correr cada algoritmo con valores de n cada vez más grandes.
+3) Llevar un registro detallado del tiempo que cada implementación emplea.
+
+COMPLEJIDAD:
+Complejidad no significa que tan difícil o enredado es un algoritmo.
+Complejidad se refiere a los requerimientos de tiempo y espacio.
+	1. Complejidad de tiempo: el tiempo que toma ejecutarlo.
+	2. Complejidad de espacio: la memoria que requiere para ejecutarse.
+
+Se expresa con relción al tamaño del problema. El tamaño del problema es el número de elementos  que el algoritmo procesa.
+
+La notación Big O usa función de crecimiento para describir como el peor caso de algoritmo se relaciona con el tamaño del problema
+
+Existen 5 reglas en la notación Big O:
+
+1. Si un algoritmo desempeña una cierta secuencia de pasos f(N) veces para una función f, decimos que toma O(f(N)) pasos.
+
+2. Si un algoritmo desempeña O(f(N)) pasos y después O(g(N)) pasos, la complejidad total del algoritmo es O(f(N)+g(N)).
+
+3. Si un algoritmo toma O(f(N)+g(N)) se puede simplificar sí y solo sí     f(N)> g(N) se simplifica O(f(N)).
+
+4. Si un algoritmo toma O(f(N)) pasos y por cada uno de estos pasos toma O(g(N)) pasos adicionales, la complejidad total será O(f(N) x g(N)).
+
+5. Si C es una constante, O(C x f(N)) = O(f(C x N)) = O(f(N)). Las constantes se ignoran.
+
+Funciones comunes:
+
+O(1) -> toma un tiempo constante sin importar el tamaño del problema.
+O(log N) -> se encuentran en algoritmos que dividen el número de elementos 	       a considerar en cada iteración. Un ejemplo es la búsqueda en  		    un árbol (checar el libro para mayor detalle).
+O(sqrt(N)) -> poco comúnes.
+O(N) -> cómunes. (Checar cuaderno para mayor detalle).
+O(N log N) -> algoritmos que iteran sobre todos los datos de entrada y por 		      cada uno realiza algo que requiere.
+O(N²) -> algoritmos que iteran sobre los datos de entrada y por cada 		 elemento itera sobre todos de nuevo.
+O(2**n) -> problemas difíciles donde es necesario contemplar todas las 		   combinaciones posibles, rquieren uso de heurísticas.
+O(N!) -> Es el tipo de algoritmo que crece a mayor velocidad que los 		 anteriores.
+
+Otras notaciones:
+
+Big Omega: Denota el requerimiento de tiempo mínimo para un algoritmo. 		   Mejor caso.
+Big Theta: Denota el mejor estimado del tiempo necesario para un 		   algoritmo. Caso promedio.
+
+

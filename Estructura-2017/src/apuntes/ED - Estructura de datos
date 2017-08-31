@@ -1,0 +1,49 @@
+Estructura de datos: Un "contenedor" que guarda datos de manera ordenada.
+
+Datos: cualquier representación abstracta de una cosa o concepto (objeto).
+
+Estructura: Organización conceptual de los datos.
+
+Algunas estructuras:
+-> Bolsas.
+-> Conjuntos.
+-> Listas.
+-> Filas.
+-> Pilas.
+-> Árboles.
+-> Mapas.
+-> Arreglos.
+
+Operaciones comunes:
+-> Agregar elementos.
+-> Remover elementos.
+-> Vaciar contenedor.
+-> Comparar contenedor.
+-> Revisar su tamaño.
+-> Encontrar elementos.
+-> Ordenar elementos (en aquéllas estructura de datos ordenables).
+
+También se suelen hablar de colecciones; en general, una colección, es un objeto que agrupa otros objetos y provee varios servicios a sus clientes. Donde sus servicios básicos son:
+-> Añadir.
+-> Remover.
+-> Recuperar.
+-> Consultar.
+
+El más común es una bolsa que es un tipo de colección que contiene objetos... y nada más:
+-> No conserva un orden.
+-> No evita duplicados.
+-> No ofrece gran variedad de servicios.
+-> Tiene un tamaño finito.
+-> En Java, todos los objetos contenidos deberán de ser similares (mismo  tipos de datos).
+
+Métodos que requiere una bolsa:
+-> Reportar número actual de elementos en la bolsa.
+-> Reportar si la bolsa está vacía o llena.
+-> Añadir un elemento.
+-> Remover un elemento cualquiera.
+-> Remover una ocurrencia de un elemento dado (de ser posible).
+-> Remover todos los elementos.
+-> Determinar si la bolsa contiene un elemento dado.
+-> Contar el número de ocurrencias de un elemento dado.
+-> Ver todos los elementos contenidos.
+
