@@ -90,8 +90,13 @@ public class SLinkedList<E> implements List<E> {
  
     @Override
     public boolean remove(E e) {        
-        SNode<E> i = top;                
-        return false;
+        SNode<E> i = top;           
+        for(int j = 1; j < indexOf(e)+1; j++){
+            i = i.next;
+        }
+        i.next = i.next.next;
+        this.size--;
+        return true;
     }
  
     @Override
