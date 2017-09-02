@@ -8,6 +8,7 @@ package linkedLists;
 /**
  *
  * @author fabiancm25
+ * @param <E>
  */
 public class SLinkedList<E> implements List<E> {
      
@@ -100,8 +101,7 @@ public class SLinkedList<E> implements List<E> {
     }
  
     @Override
-    public E getFirst() {
-        // TODO Auto-generated method stub
+    public E getFirst() {        
         return this.top.next.value;
     }
  
@@ -116,20 +116,34 @@ public class SLinkedList<E> implements List<E> {
  
     @Override
     public E get(int index) {
-        // TODO Auto-generated method stub
-        return null;
+        SNode<E> i = top;
+        for(int j = 0; j <=index; j++){
+            i = i.next;
+        }
+        return i.value;
     }
  
     @Override
     public E set(int index, E element) {
-        // TODO Auto-generated method stub
-        return null;
+        SNode<E> i = top;
+        SNode<E> newEntry = new SNode<E>(element);
+        for(int j = 1; j <= index; j++){
+            i = i.next;
+        }
+        newEntry.next = i.next.next;
+        i.next = newEntry;
+        
+        return i.value;
     }
  
     @Override
-    public boolean contains(E e) {
-        // TODO Auto-generated method stub
-        return false;
+    public boolean contains(E e) {        
+        if(indexOf(e) != -1){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
  
     @Override
