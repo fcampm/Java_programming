@@ -3,155 +3,169 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package linked_lists;
+package linkedLists;
 
 /**
  *
- * @author root
- * @param <E>
+ * @author fabiancm25
  */
-public class SLinkedList<E> implements List<E>{
-    
+public class SLinkedList<E> implements List<E> {
+     
     private SNode<E> top;
     private int size;
-
+     
     public SLinkedList(){
         this.top = new SNode<E>();
         this.size = 0;
     }
-    
+ 
     @Override
     public void addFirst(E e) {
-        
         SNode<E> newEntry = new SNode<E>(e);
         newEntry.next = this.top.next;
-        this.top = newEntry;
-        this.size ++;
+        this.top.next = newEntry;
+        this.size++;
     }
-
+ 
     @Override
     public void addLast(E e) {
-        
         SNode<E> newEntry = new SNode<E>(e);
         SNode<E> i = top;
         while(i.next != null){
             i = i.next;
         }
         i.next = newEntry;
-        this.size ++;
+        this.size++;
     }
-
+ 
     @Override
     public void add(int index, E element) {
-        
-        int i = 0;
+        SNode<E> i = top;
         SNode<E> newEntry = new SNode<E>(element);
+        for(int j = 1; j <= index; j++){
+            i = i.next;           
+        }
+        newEntry.next = i.next;
+        i.next = newEntry;        
+        this.size++;
+        
         
     }
-
+ 
     @Override
     public E removeFirst() {
-        
-        if (this.isEmpty()){
+        if(this.isEmpty()){
             return null;
-        }
-        else{
+        }else{
             E val = this.top.next.value;
             this.top.next = this.top.next.next;
-            this.size --;
+            this.size--;
             return val;
-        }        
+        }
     }
-
+ 
     @Override
     public E removeLast() {
-       
-        
+        SNode<E> j = top;
+        for (int i = 1; i < this.size; i++){
+            j = j.next;
+        }
+        E value = j.value;
+        j.next = null;
+        this.size--;
+        return value;
     }
-
+ 
     @Override
     public E remove(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // TODO Auto-generated method stub
+        return null;
     }
-
+ 
     @Override
     public boolean remove(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // TODO Auto-generated method stub
+        return false;
     }
-
+ 
     @Override
     public E getFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // TODO Auto-generated method stub
+        return this.top.value;
     }
-
+ 
     @Override
     public E getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SNode<E> i = top;
+        for(int j = 1; j< this.size; j++){
+            i = i.next;
+        }
+        return i.next.value;
     }
-
+ 
     @Override
     public E get(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // TODO Auto-generated method stub
+        return null;
     }
-
+ 
     @Override
     public E set(int index, E element) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // TODO Auto-generated method stub
+        return null;
     }
-
+ 
     @Override
     public boolean contains(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // TODO Auto-generated method stub
+        return false;
     }
-
+ 
     @Override
     public int indexOf(E e) {
-        
         SNode<E> i = top.next;
         int index = 0;
-        while (i != null){
+        while(i != null){
             if(i.value.equals(e)){
                 return index;
-            }
-            else{
+            }else{
                 i = i.next;
                 index++;
             }
         }
         return -1;
     }
-
+ 
     @Override
     public void clear() {
-        
         this.top.next = null;
         this.size = 0;
     }
-
+ 
     @Override
     public int size() {
         return this.size;
     }
-
+ 
     @Override
     public boolean isEmpty() {
         return this.top.next == null;
     }
-
+ 
     @Override
     public E[] toArray() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // TODO Auto-generated method stub
+        return null;
     }
-    
+     
     @Override
     public String toString(){
-        String st = "[";
+        String st = new String("[");
         SNode<E> i = this.top.next;
         while(i != null){
-            st += i.value;            
+            st += i.value + ", ";
             i = i.next;
         }
-        return st + "]";
+        return st+"]";
     }
-    
 }

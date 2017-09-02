@@ -1,15 +1,16 @@
-
-package linked_lists;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package linkedLists;
 
 /**
  *
- * @author root 
- * @param <E>
+ * @author fabiancm25
  */
-
-// Simple link list "S"
 public class SNode<E> {
-    
+ 
     public E value;
     public SNode<E> next;
      
