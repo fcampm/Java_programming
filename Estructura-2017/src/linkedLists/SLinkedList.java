@@ -78,29 +78,35 @@ public class SLinkedList<E> implements List<E> {
  
     @Override
     public E remove(int index) {
-        // TODO Auto-generated method stub
-        return null;
+        SNode<E> i = top;
+        for(int j = 1; j <= index; j++){
+            i = i.next;
+        }
+        E value = i.value;
+        i.next = i.next.next;
+        this.size--;
+        return value;
     }
  
     @Override
-    public boolean remove(E e) {
-        // TODO Auto-generated method stub
+    public boolean remove(E e) {        
+        SNode<E> i = top;                
         return false;
     }
  
     @Override
     public E getFirst() {
         // TODO Auto-generated method stub
-        return this.top.value;
+        return this.top.next.value;
     }
  
     @Override
     public E getLast() {
         SNode<E> i = top;
-        for(int j = 1; j< this.size; j++){
+        for(int j = 0; j< this.size; j++){
             i = i.next;
         }
-        return i.next.value;
+        return i.value;
     }
  
     @Override
