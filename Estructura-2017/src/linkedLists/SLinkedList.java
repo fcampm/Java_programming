@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package linkedLists;
-
+import java.util.Arrays;
 /**
  *
  * @author fabiancm25
@@ -14,6 +14,7 @@ public class SLinkedList<E> implements List<E> {
      
     private SNode<E> top;
     private int size;
+    private E[] array;
      
     public SLinkedList(){
         this.top = new SNode<E>();
@@ -180,7 +181,13 @@ public class SLinkedList<E> implements List<E> {
     @Override
     public E[] toArray() {
         // TODO Auto-generated method stub
-        return null;
+        array = (E[])new Object[this.size];
+        SNode<E> i = top;
+        for(int j = 1; j <= this.size; j++){
+            i = i.next;
+            array[j-1]=i.value;
+        }
+        return Arrays.copyOf(array, size);
     }
      
     @Override
