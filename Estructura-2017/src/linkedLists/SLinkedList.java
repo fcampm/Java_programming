@@ -44,7 +44,7 @@ public class SLinkedList<E> implements List<E> {
     public void add(int index, E element) {
         SNode<E> i = top;
         SNode<E> newEntry = new SNode<E>(element);
-        for(int j = 1; j <= index; j++){
+        for(int j = 0; j < index; j++){
             i = i.next;           
         }
         newEntry.next = i.next;
@@ -81,7 +81,7 @@ public class SLinkedList<E> implements List<E> {
     @Override
     public E remove(int index) {
         SNode<E> i = top;
-        for(int j = 1; j <= index; j++){
+        for(int j = 0; j < index; j++){
             i = i.next;
         }
         E value = i.value;
@@ -93,7 +93,7 @@ public class SLinkedList<E> implements List<E> {
     @Override
     public boolean remove(E e) {        
         SNode<E> i = top;           
-        for(int j = 1; j < indexOf(e)+1; j++){
+        for(int j = 0; j < indexOf(e); j++){
             i = i.next;
         }
         i.next = i.next.next;
@@ -128,7 +128,7 @@ public class SLinkedList<E> implements List<E> {
     public E set(int index, E element) {
         SNode<E> i = top;
         SNode<E> newEntry = new SNode<E>(element);
-        for(int j = 1; j <= index; j++){
+        for(int j = 0; j < index; j++){
             i = i.next;
         }
         newEntry.next = i.next.next;
@@ -183,9 +183,9 @@ public class SLinkedList<E> implements List<E> {
         // TODO Auto-generated method stub
         array = (E[])new Object[this.size];
         SNode<E> i = top;
-        for(int j = 1; j <= this.size; j++){
+        for(int j = 0; j < this.size; j++){
             i = i.next;
-            array[j-1]=i.value;
+            array[j]=i.value;
         }
         return Arrays.copyOf(array, size);
     }
