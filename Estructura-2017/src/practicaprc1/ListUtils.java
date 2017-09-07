@@ -36,17 +36,17 @@ public class ListUtils {
     
     public static <T> LinkedList<T> alternate(LinkedList<T> lst1, LinkedList<T> lst2){
         LinkedList<T> lstFN = new LinkedList<T>();
-        if(lst1.size() == lst2.size()){
-            for(int i = 0; i < lst1.size(); i++){                                
-                lstFN.add(lst1.get(i));
-                lstFN.add(lst2.get(i));                
-            }        
-            return lstFN;
-        }
-        else{
-            return null;
-        }
-    }
+        
+        for(int i = 0, j = 0; i < lst1.size(); i++, j++){                                
+            lstFN.add(lst1.get(i));
+            if(j < lst2.size()){
+                lstFN.add(lst2.get(i));
+            }                
+        }        
+        return lstFN;
+   }
+        
+    
     
     public static <T> LinkedList<T> concatenateSorted(LinkedList <T> lst1, LinkedList <T> lst2){                
         LinkedList<T> lstFN = new LinkedList<T>();
@@ -54,9 +54,9 @@ public class ListUtils {
             lstFN.add(lst1.get(i));
         }
         for(int j = 0; j < lst2.size(); j++){
-            for(int k = 0; k < lstFN.size(); k++){
-                
-            }
+            lstFN.add(lst2.get(j));
         }
+        lstFN.sort(null);
+        return lstFN;
     }
 }

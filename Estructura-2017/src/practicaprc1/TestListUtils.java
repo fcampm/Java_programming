@@ -15,6 +15,7 @@ public class TestListUtils {
         LinkedList<Integer> test4= new LinkedList<Integer>();
         LinkedList<Integer> test5= new LinkedList<Integer>();
         LinkedList<Integer> test6= new LinkedList<Integer>();
+        
         for(int i = 0; i < 10; i++){
             test1.addLast(i);
         }
@@ -60,9 +61,9 @@ public class TestListUtils {
         
         System.out.println("\nPrinting alternate lists test3 - test4");
         System.out.println(ListUtils.alternate(test3, test4));
-        System.out.println(ListUtils.alternate(test1, test2));
+        System.out.println(ListUtils.alternate(test1, test3));
         
         System.out.println("\nPrinting concatenate sorted Linked List test5 - test6");
-        
+        System.out.println(ListUtils.concatenateSorted(test5, test6));
     }
 }
