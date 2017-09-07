@@ -156,12 +156,16 @@ public class ArraySet<T> implements GenericSetInterface<T>{
         return true;
     }
     
-    public ArraySet<T> union(ArraySet<T> otherSet){
+    public ArraySet<T> union(ArraySet<T> otherSet, ArraySet<T> ootherSet){
         
         ArraySet unionSet = new ArraySet();
         
-        for (int i = 0; i < unionSet.numberOfEntries; i++){
-            
+        for (int i = 0; i < otherSet.numberOfEntries; i++){
+            unionSet.add(otherSet.sets[i]);            
         }
+        for(int j = 0; j < ootherSet.numberOfEntries; j++){
+            unionSet.add(ootherSet.sets[j]);
+        }
+        return unionSet;
     }
 }
