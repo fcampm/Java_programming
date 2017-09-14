@@ -37,8 +37,8 @@ public class DLinkedList<E> implements List<E> {
     public void addLast(E e) {
         DNode<E> nE = new DNode<E>(e);
         nE.next = bottom;
-        nE.prev = bottom.prev.prev;
         this.bottom.prev.next = nE;
+        nE.prev = bottom.prev;        
         this.bottom.prev = nE;
         this.size ++;
     }
@@ -51,10 +51,15 @@ public class DLinkedList<E> implements List<E> {
             this.bottom.prev = nE;
             nE.prev = this.top;
             nE.next = this.bottom;
+            this.size ++;
         }
         else{
             DNode<E> nodeAt = this.getNodeAt(index);
-            
+            nE.next = nodeAt;
+            nE.prev = nodeAt.prev;
+            nodeAt.prev.next = nE;
+            nodeAt.prev = nE;
+            this.size ++;
         }
     }
 
@@ -67,6 +72,7 @@ public class DLinkedList<E> implements List<E> {
         DNode<E> e = top.next;
         top.next = e.next;
         e.next.prev = top;
+        this.size --;
         return value;
     }
 
@@ -76,20 +82,37 @@ public class DLinkedList<E> implements List<E> {
             return null;
         }
         E value = bottom.prev.value;
-        this.bottom.prev = bottom.prev.prev;
-        this.bottom.prev.next = bottom;
+        bottom = bottom.prev.prev;
+        bottom.prev.next = bottom;
         this.size --;
         return value;
     }
 
     @Override
     public E remove(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(isEmpty()){
+           return null;
+        }
+        else{
+            DNode<E> nodeAt = this.getNodeAt(index);
+            E value = nodeAt.value;
+            nodeAt.prev.next = nodeAt.next;
+            nodeAt.next.prev = nodeAt.prev;
+            this.size --;
+            return value;
+        }
     }
 
     @Override
     public boolean remove(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(indexOf(e) >= 0){
+            int index = indexOf(e);
+            remove(index);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
@@ -104,12 +127,22 @@ public class DLinkedList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DNode<E> eN = getNodeAt(index);
+        E value = eN.value;
+        return value;
     }
 
     @Override
     public E set(int index, E element) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(index < this.size){
+            DNode<E> nodeAt = getNodeAt(index);
+            E value = nodeAt.value;
+            nodeAt.value = element;
+            return value;
+        }
+        else{
+            return null;
+        }
     }
 
     @Override
