@@ -24,7 +24,6 @@ public class TestCicledList {
         System.out.println("Ciclo?: " + liebreTortuga(llst));
         
         llst.makeLoopy(2, 5);
-        
         System.out.println("Ciclo?: " + liebreTortuga(llst));
         System.out.println(llst.toString());
     }
