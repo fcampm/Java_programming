@@ -23,4 +23,7 @@ public class TestStack {
         stk.clear();
         System.out.println(stk.isEmpty()); //true         
     } 
+    public static boolean isBalanced(String expression){
+        return false;
+    }
 }
