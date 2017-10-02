@@ -1,5 +1,5 @@
 
-package stack;
+package actividad7;
 
 /**
  *
@@ -12,4 +12,6 @@ public interface Stack<E> {
     public E peek();
     public boolean isEmpty();
     public void clear();
+    public int size();
+    public E[] toArray();
 }

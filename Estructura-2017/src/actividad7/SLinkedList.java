@@ -1,6 +1,5 @@
 
-package stack;
-import linkedLists.*;
+package actividad7;
 import java.util.Arrays;
 /**
  *

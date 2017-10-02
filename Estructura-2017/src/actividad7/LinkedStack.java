@@ -1,5 +1,5 @@
 
-package stack;
+package actividad7;
 
 /**
  *
@@ -52,6 +52,18 @@ public class LinkedStack<E> implements Stack<E>{
     public void clear() {
         top.next = null;
         this.size = 0;
+    }
+    
+    public E[] toArray(){
+        @SuppressWarnings("unchecked")
+        E[] e = (E[])new Object[size];
+        SNode<E> n = top;
+        int i = 0;
+        while(n.next!=null){
+            e[i++] = n.value;
+            n = n.next;
+        }
+        return e;
     }
 }
     
