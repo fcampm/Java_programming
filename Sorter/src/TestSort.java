@@ -16,6 +16,7 @@ public class TestSort {
         int[] arr2 = {1, 2, 3, 4, 5, 0};
         int[] arr3 = {1, 2, 4, 6, 7, 13};
         int[] arr4 = {8, 1, 0, 33, 12, 17, 89, 5, 42, 23};
+        int[] arr5 = {56, 89, 7, 2, 0, 16, 1};
         
         System.out.println("\nProbando el metodo isOrdered");
         System.out.println(isOrdered(arr1, 0)); // false.
@@ -26,7 +27,7 @@ public class TestSort {
         System.out.println("\nProbando el metodo selectionSort");
         Sorter.selectionSort(arr1);
         Sorter.selectionSort(arr2);
-        System.out.println(isOrdered(arr1, 0)); // false.
+        System.out.println(isOrdered(arr1, 0)); // true.
         System.out.println(isOrdered(arr2, 0)); // true.
         
         System.out.println("\nProbando el metodo insertionSort");
@@ -38,7 +39,9 @@ public class TestSort {
         System.out.println("\nProbando el metodo bubbleSort");
         Sorter.bubbleSort(arr1);
         Sorter.bubbleSort(arr2);
+        Sorter.bubbleSort(arr5);
         System.out.println(isOrdered(arr1, 0)); // true.
         System.out.println(isOrdered(arr2, 0)); // true.
+        System.out.println(isOrdered(arr5, 0)); // true.
     }
 }

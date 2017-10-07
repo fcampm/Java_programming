@@ -15,7 +15,7 @@ public class Sorter {
                 }
             }
             if (min != i){
-                int temp = a[i];
+                int temp = a[min];
                 a[min] = a[i];
                 a[i] = temp;
             }
@@ -36,16 +36,21 @@ public class Sorter {
     }
     
     public static void bubbleSort(int[] a){
-        
-        for (int i = 1; i < a.length; i++){
+        int temp, temp2;
+        for (int i = 1; i < a.length; i++){            
+            int swap = 0;
             for(int j = 0; j < a.length - i; j++){
                 if(a[j] > a[j+1]){
-                    int temp = a[j];
-                    int temp2 = a[j+1];
+                    temp = a[j];
+                    temp2 = a[j+1];
                     a[j] = temp2;                    
                     a[j+1] = temp;
+                    swap = swap+1;
                 }
             }
-        }
+            if (swap == 0){
+                break;
+            }
+        }        
     }
 }
