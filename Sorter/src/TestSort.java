@@ -16,6 +16,8 @@ public class TestSort {
         int[] arr2 = {1, 2, 3, 4, 5, 0};
         int[] arr3 = {1, 2, 4, 6, 7, 13};
         int[] arr4 = {8, 1, 0, 33, 12, 17, 89, 5, 42, 23};
+        
+        System.out.println("\nProbando el metodo isOrdered");
         System.out.println(isOrdered(arr1, 0)); // false.
         System.out.println(isOrdered(arr2, 0)); // false.
         System.out.println(isOrdered(arr3, 0)); // true.
